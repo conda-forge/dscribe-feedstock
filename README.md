@@ -153,4 +153,5 @@ Feedstock Maintainers
 =====================
 
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@lauri-codes](https://github.com/lauri-codes/)
 
