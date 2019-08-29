@@ -10,7 +10,7 @@ source:
   sha256: 14a80d2a8f9f5171eba0d5987eacd6e58be691dffc3700ee1d4b960bee10be27
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [win or py<37]
 
@@ -25,7 +25,6 @@ requirements:
     - numpy
     - scipy
     - ase
-    - future
     - scikit-learn
     - joblib
 
@@ -41,8 +40,8 @@ about:
   summary: 'DScribe is a python package for creating machine learning descriptors for atomistic systems.'
 
   description: |
-    DScribe is a Python package for transforming atomic structures into 
-    descriptors that can be used in various machine learning tasks related 
+    DScribe is a Python package for transforming atomic structures into
+    descriptors that can be used in various machine learning tasks related
     to materials science.
   doc_url: https://singroup.github.io/dscribe/
   dev_url: https://github.com/SINGROUP/dscribe
