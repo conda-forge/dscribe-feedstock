@@ -18,11 +18,11 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - pybind11
+  host:
     - python
     - pip
   run:
     - python
-    - pybind11
     - numpy
     - scipy
     - ase
