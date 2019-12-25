@@ -1,5 +1,5 @@
 {% set name = "dscribe" %}
-{% set version = "0.2.9" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 14a80d2a8f9f5171eba0d5987eacd6e58be691dffc3700ee1d4b960bee10be27
+  sha256: 98afaea665093a8cdf2ccf34cdeb961632fbff2d007de4a8e533c8029d350afd
 
 build:
-  number: 2
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: True  # [win or py<37]
 
@@ -18,6 +18,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
   host:
+    - pybind11
     - python
     - pip
   run:
