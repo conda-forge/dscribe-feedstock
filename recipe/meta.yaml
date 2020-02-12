@@ -32,7 +32,8 @@ requirements:
 test:
   imports:
     - dscribe
-    - dscribe.descriptors.SOAP  
+    - dscribe.libacsf.acsfwrapper
+    - dscribe.libmbtr.mbtrwrapper
 
 about:
   home: https://singroup.github.io/dscribe/
