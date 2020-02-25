@@ -34,6 +34,8 @@ test:
     - dscribe
     - dscribe.libacsf.acsfwrapper
     - dscribe.libmbtr.mbtrwrapper
+  commands:
+    - pip check
 
 about:
   home: https://singroup.github.io/dscribe/
