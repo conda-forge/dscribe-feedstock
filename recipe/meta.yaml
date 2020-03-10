@@ -1,5 +1,5 @@
 {% set name = "dscribe" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 98afaea665093a8cdf2ccf34cdeb961632fbff2d007de4a8e533c8029d350afd
+  sha256: d2531fa4eb0e9a2538b4d992374174a0fe7853fd055e5b33b0a0ea8a94ce1131
 
 build:
-  number: 3
-  script: "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [win or py<37]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [win or py<37]
 
 requirements:
   build:
@@ -44,7 +44,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'DScribe is a python package for creating machine learning descriptors for atomistic systems.'
+  summary: DScribe is a python package for creating machine learning descriptors for atomistic systems.
 
   description: |
     DScribe is a Python package for transforming atomic structures into
