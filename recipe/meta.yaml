@@ -17,14 +17,15 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - cython >=0.29.15
   host:
-    - pybind11
     - python
     - pip
+    - pybind11
   run:
-    - pybind11
     - python
     - pip
+    - pybind11
     - numpy
     - scipy
     - ase
