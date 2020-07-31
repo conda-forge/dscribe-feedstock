@@ -35,8 +35,6 @@ requirements:
 test:
   imports:
     - dscribe
-    - dscribe.libacsf.acsfwrapper
-    - dscribe.libmbtr.mbtrwrapper
   commands:
     - pip check
 
