@@ -1,5 +1,5 @@
 {% set name = "dscribe" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4a30d101c7887592c6ec08469f0093dfb23fa5f4c09d93694dbf3916bd104948
+  sha256: 5afb30ba53268b2b6c685fc4c0bbaf5d2a0535054de8cf9a99f2388b5ee96a21
 
 build:
   number: 0
