@@ -25,6 +25,7 @@ requirements:
     - python
     - pip
     - pybind11
+    - setuptools
   run:
     - python
     - pip
