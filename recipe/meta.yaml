@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 444484b7070255257383d191936f8bb5e4b11c1ba8eb4ac22c7273e82f9c8bdd
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - python
     - pip
     - pybind11
+    - setuptools
   run:
     - python
     - pip
