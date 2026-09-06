@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: dscribe
+  version: "2.1.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 5cbc88f1be444c7590e315868a4e7ea88e11cee4311575f8e1d26bb834d43c97
+
+build:
+  number: 3
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: pybind11
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - cython >=0.29.14
+  host:
+    - python
+    - pip
+    - pybind11
+    - setuptools
+  run:
+    - python
+    - pip
+    - pybind11
+    - numpy
+    - scipy
+    - ase
+    - scikit-learn
+    - joblib
+    - sparse
+
+tests:
+  - python:
+      imports:
+        - dscribe
+      pip_check: true
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: DScribe is a python package for creating machine learning descriptors for atomistic systems.
+  description: |
+    DScribe is a Python package for transforming atomic structures into
+    descriptors that can be used in various machine learning tasks related
+    to materials science.
+  homepage: https://singroup.github.io/dscribe/
+  repository: https://github.com/SINGROUP/dscribe
+  documentation: https://singroup.github.io/dscribe/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - lauri-codes
