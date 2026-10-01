@@ -13,17 +13,16 @@ source:
   sha256: 5cbc88f1be444c7590e315868a4e7ea88e11cee4311575f8e1d26bb834d43c97
 
 build:
-  number: 3
+  number: 4
   script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: pybind11
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - pybind11
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - cython >=0.29.14
